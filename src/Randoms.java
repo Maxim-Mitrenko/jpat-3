@@ -18,17 +18,14 @@ public class Randoms implements Iterable<Integer> {
     public Iterator<Integer> iterator() {
         return new Iterator<>() {
 
-            int lastInt = 0;
-
             @Override
             public boolean hasNext() {
-                return lastInt != max;
+                return true;
             }
 
             @Override
             public Integer next() {
-                lastInt = min + random.nextInt(max - min + 1);
-                return lastInt;
+                return min + random.nextInt(max - min + 1);
             }
         };
     }
